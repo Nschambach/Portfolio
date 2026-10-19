@@ -1,1 +1,58 @@
+<!DOCTYPE html?>
+<head>
+  <title>My Online Portfolio</title>
+  <meta charset = "UTF-8">
+  <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+  <script scr="https://cdn.jddelivr.net/npm/chart.js"></script>
+  <style>
+    .chart-container{
+      width:90%;
+      max-width:800px
+      margin:30px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">My Online Portfolio</b1>
+  <p style ="text-aling:center;">I'm Nicholas Schambach.</p>
+  <div class = "chart-container">
+    <canvas id = chart></canvas>
+  </div>
+  <script>
+    const ctx=document.getElementById("chart");
+    new Chart(ctx,{
+      type: "line",
+      data: {
+        labels:["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        datasets:[{
+          label:"Sleep",
+          data:[3,5,4,6,4,9],
 
+          borderColor: "#800000"
+          backgroundColor: "#000000"
+          borderWidth:3,
+          fill:true,
+          tension:0.35,
+          pointRadius:4,
+          pointBackgroundColor:"#800000",
+        }]
+      },
+      options:{
+        responsive:true,
+        maintainAspectRatio:true,
+
+        plugins:{
+          legend:{
+            display:true
+          }
+        },
+        scales: {
+          y:{
+            beginAtZero:true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
